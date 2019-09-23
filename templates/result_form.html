@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+</head>
+
+<body>
+	<header><h1>{{ judul }}</h1></header>
+	<div class="container">{{ isi_berita|safe }}</div>
+	<div><br><br><br></div>
+</body>
+
+</html>

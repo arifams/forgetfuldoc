@@ -1,1 +1,2 @@
-web: guncorn app:app
+web: gunicorn app:app --log-file=-
+

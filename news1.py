@@ -27,5 +27,5 @@ def my_form_post() :
     txt_content = txt_content.replace('[, ', '')
     return render_template("result_form.html", isi_berita = txt_content, judul = title_str)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run()

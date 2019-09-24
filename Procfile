@@ -1,2 +1,1 @@
-web: gunicorn app:app --log-file=-
-
+web: gunicorn forgetfuldoc:app --log-file=-

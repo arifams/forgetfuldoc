@@ -1,4 +1,4 @@
-# theirnews app
+# forgetfuldoc app
 
 <h3>Read information behind the screen.</h3>
 

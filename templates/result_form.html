@@ -5,14 +5,6 @@
 </head>
 
 <body>	
-	<!-- <div class="logo">logo</div>
-	<header>
-		<a href="{{ url_for('my_form') }}"><img src="{{url_for('static', filename='images/logo_forgetfuldoc_200x200.png')}}" class="logo" style="float: left; height: 16.5%;" /></a>
-		<h3>{{ judul }}</h3></header>
-	<div class="container">{{ isi_berita|safe }}</div>
-	<div><br><br><br></div> -->
-
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-2">
@@ -26,10 +18,12 @@
 					<h3 style="padding-top: 10px;">
 						{{ judul }}
 					</h3>
+					<h5>{{ waktu }}</h5>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
+					<p><img src="{{ foto }}" style="padding-top: 10px;" cclass="rounded mx-auto d-block" /></p>
 					<p style="padding-top: 10px;">
 					{{ isi_berita|safe }}
 					</p>

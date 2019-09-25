@@ -7,27 +7,23 @@ body {
   line-height: 2;
 }
 /*
+ * Formatting the search box
+ */
+.logo { 
+  width: 100px;
+  height: 100px;
+}
+/*
  * Formatting the header area
  */
 header {
-  background-color: #DFB887;
+  background-color: #423e39;
   width: 80%;
   height: 120%;
   opacity: .9;
   margin: 0 auto;
-  padding: 10px;
 }
-header h1.logo {
-  margin: 0;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  float: left;
-}
-header h1.logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
+
 /*
  * Centering the body content
  */
@@ -50,18 +46,17 @@ div.about {
           border-radius: 6px;
 }
 h2 {
-  font-size: 3em;
   margin-top: 40px;
   text-align: center;
   letter-spacing: -2px;
 }
 h3 {
   font-size: 1.7em;
-  font-weight: 100;
-  margin-top: 30px;
+  font-weight: 400;
+  margin-top: 10px;
   text-align: center;
   letter-spacing: -1px;
-  color: #999;
+  color: #ffcfcf;
 }
 .menu {
   float: right;

@@ -11,9 +11,12 @@
 </ul>
 <ul><strong>running flask</strong>
 <br>
-export FLASK_APP=news1.py
-export FLASK_ENV=development
-python3 -m flask run
+`export FLASK_APP=news1.py`
+<br>
+`export FLASK_ENV=development` (if it's for development)
+<br>
+`python3 -m flask run`
+<br>
 `flask run` 
 </ul>
 <ul>

@@ -23,28 +23,9 @@ header {
   opacity: .9;
   margin: 0 auto;
 }
-
 /*
- * Centering the body content
+ * middle
  */
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-div.home {
-  padding: 10px 0 30px 0;
-  background-color: #E6E6FA;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-div.about {
-  padding: 10px 0 30px 0;
-  background-color: #E6E6FA;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
 h2 {
   margin-top: 40px;
   text-align: center;
@@ -57,18 +38,4 @@ h3 {
   text-align: center;
   letter-spacing: -1px;
   color: #ffcfcf;
-}
-.menu {
-  float: right;
-  margin-top: 8px;
-}
-.menu li {
-  display: inline;
-}
-.menu li + li {
-  margin-left: 35px;
-}
-.menu li a {
-  color: #444;
-  text-decoration: none;
 }

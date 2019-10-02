@@ -27,9 +27,9 @@ def my_form_post() :
     time = str(time)
     time = re.sub('<[^>]+>', '', time)
 
-    # gambars = soup.find_all('img')
-    # for gambar in gambars :
-    #     gambar = gambar['src']
+    gambars = soup.find_all('img')
+    for gambar in gambars :
+        gambar = gambar['src']
     
     txt_content = re.sub('<[^>]+>', '', para)
     txt_content = txt_content.replace('.,', '.\n')
@@ -42,7 +42,7 @@ def my_form_post() :
     txt_content = txt_content.replace('[, ', '')
     txt_content = txt_content.replace(', , ,', '.')
     txt_content = txt_content.replace(', ,', ',')
-    return render_template("result_form2.html", isi_berita = txt_content, judul = title_str, waktu = time)
+    return render_template("result_form.html", isi_berita = txt_content, judul = title_str, waktu = time, foto = gambar)
 
 if __name__ == '__main__':
     app.run()

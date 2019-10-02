@@ -42,7 +42,7 @@ def my_form_post() :
     txt_content = txt_content.replace('[, ', '')
     txt_content = txt_content.replace(', , ,', '.')
     txt_content = txt_content.replace(', ,', ',')
-    return render_template("result_form2.html", isi_berita = txt_content, judul = title_str, waktu = time)
+    return render_template("result_form.html", isi_berita = txt_content, judul = title_str, waktu = time)
 
 if __name__ == '__main__':
     app.run()

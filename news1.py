@@ -22,10 +22,18 @@ def my_form_post() :
     
     paragraph = soup.find_all('p')
     para = str(paragraph)
-    
+
+    # time
     time = soup.find('time')
-    time = str(time)
-    time = re.sub('<[^>]+>', '', time)
+    if 'washingtonpost.com' in url :
+        spans = soup.find_all('span', attrs={'class':'author-timestamp'})
+        for span in spans:
+            time = str(span)
+            time = re.sub('<[^>]+>', '', time)
+    elif 'newyorker.com' in url or 'nytimes.com' in url :
+        time = str(time)
+        time = re.sub('<[^>]+>', '', time)
+
 
     # gambars = soup.find_all('img')
     # for gambar in gambars :

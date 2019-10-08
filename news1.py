@@ -35,7 +35,8 @@ def my_form_post() :
         time = str(time)
         time = re.sub('<[^>]+>', '', time)
     elif 'newyorker.com' in url :
-        time = soup.find('p', attrs={'class': 'ArticleTimestamp__timestamp___1klks '})
+        time = str(time)
+        time = re.sub('<[^>]+>', '', time)
     elif 'nrc.nl' in url :
         time = str(time)
         time = re.sub('<[^>]+>', '', time)
@@ -49,7 +50,8 @@ def my_form_post() :
         gambar = soup.find('img', attrs={'class':'css-11cwn6f'})
         # gambar = soup.findAll('srcSet')
     elif 'newyorker.com' in url :
-        gambar = soup.find('source')
+        gambars = soup.find_all('img', attrs={'title':''})
+        gambar = gambars[1]
     else :
         gambar = 'Under construction pictures'
 
@@ -57,6 +59,8 @@ def my_form_post() :
     if 'nytimes.com' in url :
         caption = soup.find('figcaption')
         caption = str(caption)
+        # caption = str(re.sub('.CreditCredit', 'ohoho', caption))
+        # caption = caption.replace('.CreditCredit', 'ohoho')
     else :
         caption = 'Under construction caption'
     
@@ -70,6 +74,7 @@ def my_form_post() :
     txt_content = txt_content.replace('[Advertisement, Supported by, ', '')
     txt_content = txt_content.replace(', Advertisement]', '')
     txt_content = txt_content.replace(', , , Advertisement]', '')
+    txt_content = txt_content.replace('\<<br>', '')
     txt_content = txt_content.replace('[, ', '')
     txt_content = txt_content.replace(', , ,', '.')
     txt_content = txt_content.replace(', ,', ',')

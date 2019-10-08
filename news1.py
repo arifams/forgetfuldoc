@@ -40,6 +40,9 @@ def my_form_post() :
     elif 'nrc.nl' in url :
         time = str(time)
         time = re.sub('<[^>]+>', '', time)
+    else :
+        time = str(time)
+        time = re.sub('<[^>]+>', '', time)
 
     # pictures extraction
     # gambars = soup.find_all('img')
@@ -52,6 +55,18 @@ def my_form_post() :
     elif 'newyorker.com' in url :
         gambars = soup.find_all('img', attrs={'title':''})
         gambar = gambars[1]
+    elif 'washingtonpost.com' in url :
+        gambars = soup.find_all('img')
+        img_str = list(gambars)
+        img_header = str(img_str[1])
+        pattern_img = r'data-hi-res-src="([^"]*)"'
+        full_img_header_url = re.search(pattern_img, img_header).group(0)
+        lst_img_header = re.findall('"([^"]*)"', full_img_header_url)
+        str_img_header = str(lst_img_header)
+        url_img_header = ('<img src="' + str_img_header + '">')
+        url_img_header = url_img_header.replace('src=\"[\'', 'src=\"')
+        url_img_header = url_img_header.replace('\']\">', '\">')
+        gambar = url_img_header
     else :
         gambar = 'Under construction pictures'
 
@@ -59,8 +74,8 @@ def my_form_post() :
     if 'nytimes.com' in url :
         caption = soup.find('figcaption')
         caption = str(caption)
-        # caption = str(re.sub('.CreditCredit', 'ohoho', caption))
-        # caption = caption.replace('.CreditCredit', 'ohoho')
+    elif 'washingtonpost.com' in url :
+        caption = soup.find('span', {'class':'pb-caption'})
     else :
         caption = 'Under construction caption'
     
